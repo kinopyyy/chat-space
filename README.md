@@ -36,11 +36,11 @@ Things you may want to cover:
 - has_many :messeges
 - has_many :group_users
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null :false|
-|user_id|integer|null: false, foreign_key: true|
+
 ### Association
 - has_many :users, though: :group_users
 - has_many :group_users
@@ -50,19 +50,20 @@ Things you may want to cover:
 ## group_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
 
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|text|text|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|image|string|
 ### Association
 - belongs_to :user
 - belongs_to :group
