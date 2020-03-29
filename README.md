@@ -32,9 +32,9 @@ Things you may want to cover:
 |email|string|null :false|
 |pass|string|null :false|
 ### Association
-- has_many :groups
+- has_many :groups, though: :group_users
 - has_many :messeges
-- belongs_to :group_user
+- has_many :group_users
 
 ## groupテーブル
 |Column|Type|Options|
@@ -42,7 +42,7 @@ Things you may want to cover:
 |name|string|null :false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :users
+- has_many :users, though: :group_users
 - has_many :group_users
 - has_many :messeges
 
@@ -53,7 +53,7 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :users
+- belongs_to :user
 - belongs_to :group
 
 
