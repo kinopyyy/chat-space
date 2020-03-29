@@ -32,7 +32,7 @@ Things you may want to cover:
 |email|string|null :false|
 |pass|string|null :false|
 ### Association
-- has_many :groups, though: :group_users
+- has_many :groups, through: :group_users
 - has_many :messeges
 - has_many :group_users
 
@@ -42,7 +42,7 @@ Things you may want to cover:
 |name|string|null :false|
 
 ### Association
-- has_many :users, though: :group_users
+- has_many :users, through: :group_users
 - has_many :group_users
 - has_many :messeges
 
