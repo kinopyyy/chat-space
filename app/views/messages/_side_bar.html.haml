@@ -2,13 +2,13 @@
   .side_bar__user_name
     .side_bar__user_name__top_items
       .side_bar__user_name__top_items__name
-        masa
+        = current_user.name
       .side_bar__user_name__top_items__icon
 
         = link_to "https://www.facebook.com/", class: "side_bar__user_name__top_items__icon__group" do
           = icon('far', 'edit')
 
-        = link_to "https://twitter.com/", class: "side_bar__user_name__top_items__icon__group" do
+        = link_to edit_user_path(current_user), class: "side_bar__user_name__top_items__icon__group" do
           = icon('fas', 'cog')        
   .side_bar__user_group
     .side_bar__user_group__top_item
