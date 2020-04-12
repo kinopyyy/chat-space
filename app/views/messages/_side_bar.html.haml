@@ -5,20 +5,20 @@
         = current_user.name
       .side_bar__user_name__top_items__icon
 
-        = link_to "https://www.facebook.com/", class: "side_bar__user_name__top_items__icon__group" do
+        = link_to new_group_path, class: "side_bar__user_name__top_items__icon__group" do
           = icon('far', 'edit')
 
         = link_to edit_user_path(current_user), class: "side_bar__user_name__top_items__icon__group" do
           = icon('fas', 'cog')        
   .side_bar__user_group
     .side_bar__user_group__top_item
-      .side_bar__user_group__top_item
-        .side_bar__user_group__top_item__group
-          テックキャンプ７１
-        .side_bar__user_group__top_item__current_message
-          zoom会議しましょう
-        .side_bar__user_group__top_item__group
-          テックキャンプ７２
-        .side_bar__user_group__top_item__current_message
-          zoom会議しましょうね
+      - current_user.groups.each do |group|
+        .side_bar__user_group__top_item
+          = link_to 'messages' do
+            .side_bar__user_group__top_item__group
+              = group.name
+            .side_bar__user_group__top_item__current_message
+              zoom会議しましょう
 
+
+        
