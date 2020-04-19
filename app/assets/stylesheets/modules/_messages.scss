@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+a{
+  color: #ffffff
+  // text-decoration-style: none;
+  
+}
+
 $color-text: #ffffff;
 $color-blue: #38aef0;
 
@@ -66,6 +72,15 @@ $color-blue: #38aef0;
     flex-direction: column;
     position: relative;
     color: $color-text;
+    
+    // リンク後文字色設定したが反映しない・・・
+    // &__top_item:link{
+    //   color: $color-text;
+    //   }
+    // &__top_item:visited{
+    // color: $color-text;
+    // }
+
       &__group{
       height: 20px;
       width: calc(300px - 40px);
@@ -73,6 +88,7 @@ $color-blue: #38aef0;
       line-height: 20px;
       margin-top: 20px;
       }
+
       &__current_message{
       height: 20px;
       width: calc(300px - 40px);
@@ -137,11 +153,12 @@ $color-blue: #38aef0;
   &__chat{
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    position: relative;
+    // position: relative;
+    overflow: scroll;
     &__top_items{
       margin-left: 40px; 
       margin-bottom: 15px;  
-      position: absolute;
+      // position: absolute;
       &__top{
       display: flex;
       width:calc(100vw - 300px - 40px);
@@ -165,7 +182,14 @@ $color-blue: #38aef0;
       margin-top: 12px;
       font-size: 14px;
       line-height: 14px; 
-      color: #434A54;     
+      color: #434A54;    
+        &__content{
+        margin-bottom: 0;
+        margin-top: 0;
+        }        
+        &__image{
+
+        }
       }
     }
   }
@@ -178,6 +202,7 @@ $color-blue: #38aef0;
     flex-direction: column;
     justify-content: center;
     &__top_item{
+    // background-color: yellowgreen;
     height: 50px;    
     width:calc(100vw - 300px - 80px ); 
     display: flex;
@@ -193,12 +218,14 @@ $color-blue: #38aef0;
 
       justify-content: space-between;
         &__form{
+        // background-color: yellow;
         height: 40px ;
-        width: 170px;
+        width: 823px;
         margin-left: 10px;
         border:solid 0px;  
         }        
-        &__icon{       
+        &__icon{  
+            
           &__body{
           font-size: 24px;
           margin-right: 10px;

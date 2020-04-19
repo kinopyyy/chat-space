@@ -3,39 +3,25 @@
     .main_bar__current_group__top_items
       .main_bar__current_group__top_items__group
         .main_bar__current_group__top_items__group__name
-          ゆかり
+          = @group.name
         .main_bar__current_group__top_items__group__member
-          Member : ゆかり きの ひろこ
-      
+          - @group.users.each do |member|        
+            =  member.name
       .main_bar__current_group__top_items__edit        
-      = link_to "/groups/#{:id}/edit", class: "main_bar__current_group__top_items__edit__icon" do
+      = link_to edit_group_path(@group.id), class: "main_bar__current_group__top_items__edit__icon" do
         Edit
       
   .main_bar__chat
-    .main_bar__chat__top_items    
-      .main_bar__chat__top_items__top    
-        .main_bar__chat__top_items__top__name
-          ゆかり
-        .main_bar__chat__top_items__top__date
-          2020/04/05(Sun) 09:54:07
-      .main_bar__chat__top_items__message
-        月曜時20時からがいいです
+    = render @messages
 
-      .main_bar__chat__top_items__top    
-        .main_bar__chat__top_items__top__name
-          ひろこ
-        .main_bar__chat__top_items__top__date
-          2020/04/05(Sun) 19:54:07
-      .main_bar__chat__top_items__message
-        月曜時23時からがいいです
+
   .main_bar__message
     .main_bar__message__top_item
       .main_bar__message__top_item__message
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'main_bar__message__top_item__message__form', placeholder: 'type a message'
+          = f.label :image, class: 'main_bar__message__top_item__message__icon' do 
+            = icon('far', 'image', class: "main_bar__message__top_item__message__icon__body")  
+            = f.file_field :image, class: 'main_bar__message__top_item__message__icon__image'
+          = f.submit 'Send', class: 'main_bar__message__top_item__send' 
        
-        %input{placeholder: "type a message", class: "main_bar__message__top_item__message__form"}
-
-        %label{calss: "main_bar__message__top_item__message__icon"}   
-          = icon('far', 'image', class: "main_bar__message__top_item__message__icon__body")  
-          %input{type: "file",class: "main_bar__message__top_item__message__icon__image"}
-      .main_bar__message__top_item__send
-        Send
