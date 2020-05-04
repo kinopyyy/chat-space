@@ -9,16 +9,14 @@
           = icon('far', 'edit')
 
         = link_to edit_user_path(current_user), class: "side_bar__user_name__top_items__icon__group" do
-          = icon('fas', 'cog')        
+          = icon('fas', 'cog')      
+            
   .side_bar__user_group
-    .side_bar__user_group__top_item
-      - current_user.groups.each do |group|
-        .side_bar__user_group__top_item
-          = link_to group_messages_path(group), method: :get do
-            .side_bar__user_group__top_item__group
-              = group.name
-            .side_bar__user_group__top_item__current_message
-              = group.show_last_message
+    - current_user.groups.each do |group|
+      .side_bar__user_group__top_item
+        = link_to group_messages_path(group), method: :get do
+          .side_bar__user_group__top_item__group
+            = group.name
+          .side_bar__user_group__top_item__current_message
+            = group.show_last_message
 
-
-        
