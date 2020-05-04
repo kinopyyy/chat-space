@@ -3,9 +3,8 @@
 }
 
 a{
-  color: #ffffff
-  // text-decoration-style: none;
-  
+  color: #ffffff;
+  text-decoration: none;
 }
 
 $color-text: #ffffff;
@@ -65,36 +64,30 @@ $color-blue: #38aef0;
     height:calc(100vh - 100px);
     background-color: #2f3e51;
     &__top_item{
-    height: 105px;
+      height: 105px;
 
-    @include position();  
+      @include position();  
 
-    flex-direction: column;
-    position: relative;
-    color: $color-text;
-    
-    // リンク後文字色設定したが反映しない・・・
-    // &__top_item:link{
-    //   color: $color-text;
-    //   }
-    // &__top_item:visited{
-    // color: $color-text;
-    // }
-
+      flex-direction: column;
+      position: relative;
+      color: $color-text;
+      overflow: scroll;
+   
       &__group{
-      height: 20px;
-      width: calc(300px - 40px);
-      font-size: 15px;
-      line-height: 20px;
-      margin-top: 20px;
+        height: 20px;
+        width: calc(300px - 40px);
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 20px;
+        cursor: pointer;
       }
 
       &__current_message{
-      height: 20px;
-      width: calc(300px - 40px);
-      font-size: 11px;
-      line-height: 20px;
-      margin-top: 5px;
+        height: 20px;
+        width: calc(300px - 40px);
+        font-size: 11px;
+        line-height: 20px;
+        margin-top: 5px;
       }
     }
   }
@@ -153,96 +146,96 @@ $color-blue: #38aef0;
   &__chat{
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    // position: relative;
     overflow: scroll;
+    padding: 46px 40px;
+    
     &__top_items{
-      margin-left: 40px; 
-      margin-bottom: 15px;  
-      // position: absolute;
+      padding-bottom: 40px;
+
+      img {
+        max-width: 120px;
+      }
+
       &__top{
-      display: flex;
-      width:calc(100vw - 300px - 40px);
-      margin-top: 35px;    
+        display: flex;
+        width:calc(100vw - 300px - 40px);         
+        margin-bottom: 10px;
+        
         &__name{
-        height: 20px;
-        font-size: 16px;font-weight: bold;
-        line-height: 16px;
-        color:#333333;        
+          height: 20px;
+          font-size: 16px;font-weight: bold;
+          line-height: 16px;
+          color:#333333;   
+          margin-bottom: 1;      
         }
         &__date{
-        height: 15px;  
-        margin-left: 5px;  
-        font-size: 12px;
-        line-height: 12px;
-        color: #999999;
+          height: 15px;  
+          margin-left: 5px;  
+          font-size: 12px;
+          line-height: 12px;
+          color: #999999; 
         }
       }  
       &__message{
-      height: 15px;
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 14px; 
-      color: #434A54;    
-        &__content{
-        margin-bottom: 0;
-        margin-top: 0;
-        }        
-        &__image{
-
-        }
+        height: 15px;
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 14px; 
+        color: #434A54;
+      }    
+      &__content{
+        margin-bottom: 0px;
+        margin-top: 0;        
+      }        
+      &__image{
+           
       }
     }
   }
+
   &__message{
     height: 90px;
+    width: 100%;
     background-color:#d2d2d2;
-
-    @include position();
-
-    flex-direction: column;
-    justify-content: center;
+    position: relative;
+    padding: 20px 40px;
     &__top_item{
-    // background-color: yellowgreen;
-    height: 50px;    
-    width:calc(100vw - 300px - 80px ); 
-    display: flex;
-    justify-content: space-between;
+      display: flex;    
       &__message{
-      height: 50px;
-      width:calc(100vw - 300px - 80px - 95px);
-      background-color: $color-text;
-      border:solid;border-color: $color-blue;border-radius: 5px;
-      box-shadow: 0 0 8px steelblue;
-
-      @include position();
-
-      justify-content: space-between;
+        position: relative;
+        width: 100%;
+        margin-right: 15px;
+        background-color: $color-text;     
         &__form{
-        // background-color: yellow;
-        height: 40px ;
-        width: 823px;
-        margin-left: 10px;
-        border:solid 0px;  
+          height: 50px ;
+          width: 100% ;         
+          padding: 0px 40px 0px 10px;
+          border:solid 0px;  
         }        
-        &__icon{  
-            
+        &__icon{          
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
           &__body{
-          font-size: 24px;
-          margin-right: 10px;
+            font-size: 24px;
+            margin-right: 10px;
+            padding-top: 3px;
           }
           &__image{
-          display: none;
+            display: none;          
           }
         }
-      }
+      }    
       &__send{
-      height: 50px;
-      width: 80px;
-      background-color: $color-blue;
-      text-align: center;
-      line-height: 50px;
-      color: $color-text;      
-      }
+        height: 50px;
+        width: 100px;
+        
+        background-color: $color-blue;
+        text-align: center;
+        line-height: 50px;
+        color: $color-text;      
+      }      
     }
   }
 }

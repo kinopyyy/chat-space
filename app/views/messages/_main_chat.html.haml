@@ -14,14 +14,12 @@
   .main_bar__chat
     = render @messages
 
-
   .main_bar__message
     .main_bar__message__top_item
+    = form_for [@group, @message], html: { class: 'main_bar__message__top_item'} do |f|
       .main_bar__message__top_item__message
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'main_bar__message__top_item__message__form', placeholder: 'type a message'
-          = f.label :image, class: 'main_bar__message__top_item__message__icon' do 
-            = icon('far', 'image', class: "main_bar__message__top_item__message__icon__body")  
-            = f.file_field :image, class: 'main_bar__message__top_item__message__icon__image'
-          = f.submit 'Send', class: 'main_bar__message__top_item__send' 
-       
+        = f.text_field :content, class: 'main_bar__message__top_item__message__form', placeholder: 'type a message'
+        = f.label :image, class: 'main_bar__message__top_item__message__icon' do 
+          = icon('far', 'image', class: "main_bar__message__top_item__message__icon__body")  
+          = f.file_field :image, class: 'main_bar__message__top_item__message__icon__image'    
+      = f.submit 'Send', class: 'main_bar__message__top_item__send'       
